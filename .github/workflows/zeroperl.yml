@@ -485,6 +485,12 @@ jobs:
 
           wasm-opt zeroperl_unopt -O3 --strip-dwarf --enable-bulk-memory --asyncify -o zeroperl.wasm
 
+      - name: Upload Workspace
+        uses: actions/upload-artifact@v4
+        with:
+          name: perl-wasi-workspace
+          path: ${{ github.workspace }}
+
       - name: Upload Prefix (WASI build)
         uses: actions/upload-artifact@v4
         with:
